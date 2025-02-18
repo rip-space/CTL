@@ -91,7 +91,7 @@ You can use variables within function bodies and other parts of your code.
 
 Example:
 ```
-function showGreeting() print(greeting)
+function showGreeting() print(getVar('greeting'))
 run showGreeting()
 ```
 
@@ -101,7 +101,7 @@ Here is a complete example that defines a variable, a function, and runs it:
 
 ```
 var greeting = 'Hello, welcome to CTL!'
-function greet() print(greeting)
+function greet() print(getVar('greeting'))
 run greet()
 ```
 
