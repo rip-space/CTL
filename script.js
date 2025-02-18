@@ -102,9 +102,11 @@ function p() {
 
         if (linnee.startsWith("alert")) {
             let text = linnee.substring(6).trim(); // Extract alert message
+            text = text.replace(/\$(\w+)/g, (match, p1) => varr.get(p1) || ''); // Replace variables with their values
             if (text) alert(text);
         } else if (linnee.startsWith("text")) {
             let text = linnee.substring(5).trim(); // Extract text message
+            text = text.replace(/\$(\w+)/g, (match, p1) => varr.get(p1) || ''); // Replace variables with their values
             if (text) {
                 let p = document.createElement("p");
                 p.textContent = text; // Set the text safely
@@ -135,6 +137,9 @@ function p() {
                             let outputText = '';
                             let print = function(text) {
                                 outputText += text + '\n';
+                            };
+                            let getVar = function(name) {
+                                return varr.get(name) || '';
                             };
                             eval(functt);
                             if (outputText) {
