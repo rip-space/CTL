@@ -1,7 +1,3 @@
-# CTL
-a coding language that is pretty simple still in work HUGE THANK TO w3schools and copilot coulded done this with out you thanks.
-a bit buggy hehehe.
-heres what to do
 # CTL Language Interface
 
 Welcome to the CTL Language Interface! This guide will help you understand how to use the CTL language and the interactive coding interface.
@@ -71,12 +67,41 @@ Example:
 run myFunc()
 ```
 
-### Full Example
+### Variables
 
-Here is a complete example that defines a function and runs it:
+#### Declaring Variables
+
+To declare a variable, use the following syntax:
 
 ```
-function greet() print('Hello, welcome to CTL!')
+var variableName = value
+```
+
+- `variableName` is the name of the variable.
+- `value` is the value assigned to the variable.
+
+Example:
+```
+var greeting = 'Hello, World!'
+```
+
+#### Using Variables
+
+You can use variables within function bodies and other parts of your code.
+
+Example:
+```
+function showGreeting() print(greeting)
+run showGreeting()
+```
+
+### Full Example
+
+Here is a complete example that defines a variable, a function, and runs it:
+
+```
+var greeting = 'Hello, welcome to CTL!'
+function greet() print(greeting)
 run greet()
 ```
 
