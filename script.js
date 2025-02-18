@@ -3,6 +3,7 @@ let code = ctl.value; // Store the initial value of the textarea
 let num = 1; // Line number counter
 const lines = new Map(); // Initialize an empty Map for lines
 const funct = new Map(); // Function storage Map
+const varr = new Map(); // Variable storage Map
 
 // Function to create a new textarea element
 function createTextarea(id) {
@@ -109,6 +110,10 @@ function p() {
                 p.textContent = text; // Set the text safely
                 outputDiv.appendChild(p); // Append to the output div
             }
+        } else if (linnee.startsWith("var")) {
+            let varAssignment = linnee.substring(4).trim(); // Extract variable assignment
+            let [varName, varValue] = varAssignment.split('=').map(s => s.trim()); // Split by = to get name and value
+            if (varName && varValue) varr.set(varName, varValue); // Store variable in the map
         } else if (linnee.startsWith("function")) {
             let functspot = linnee.indexOf(')');
             if (functspot !== -1) {
