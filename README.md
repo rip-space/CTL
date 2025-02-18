@@ -18,9 +18,12 @@ To display an alert message:
 alert Your message here
 ```
 
+You can use variables in the alert message by prefixing them with `/`.
+
 Example:
 ```
-alert Hello, World!
+var greeting = 'Hello, World!'
+alert /greeting
 ```
 
 ### Text Outputs
@@ -31,9 +34,12 @@ To display text on the page:
 text Your text here
 ```
 
+You can use variables in the text output by prefixing them with `/`.
+
 Example:
 ```
-text This is a text output.
+var message = 'This is a text output.'
+text /message
 ```
 
 ### Functions
