@@ -11,11 +11,6 @@ textarea {
     margin-bottom: 10px;
 }
 
-button {
-    display: block;
-    margin: 10px 0;
-}
-
 #output {
     margin-top: 20px;
     border: 1px solid #ccc;
