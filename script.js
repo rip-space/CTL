@@ -1,9 +1,38 @@
 let ctl = document.getElementById("code");
-let code = ctl.value; // Store the initial value of the textarea
+let runButton = document.getElementById("runButton");
 let num = 1; // Line number counter
 const lines = new Map(); // Initialize an empty Map for lines
 const funct = new Map(); // Function storage Map
 const varr = new Map(); // Variable storage Map
+
+// Event listener for the run button
+runButton.addEventListener("click", function() {
+    let linecode = ctl.value.trim(); // Get value from the input textarea
+
+    // Check if the linecode is empty
+    if (linecode === '') {
+        displayMessage("Please enter a line of code.");
+        return; // Exit if the textarea is empty
+    }
+
+    // Store the new line in the Map
+    let currentLineId = `line${num}`;
+    lines.set(currentLineId, linecode);
+
+    // Create a new line ID for the next textarea
+    let newLineId = `line${num + 1}`;
+
+    // Append new textarea to body and set focus
+    let newTextarea = createTextarea(newLineId);
+    document.body.appendChild(newTextarea);
+    newTextarea.focus();
+
+    // Increment the line number
+    num++;
+
+    // Call processLines() to process the lines whenever the button is clicked
+    processLines();
+});
 
 // Function to create a new textarea element
 function createTextarea(id) {
@@ -13,83 +42,11 @@ function createTextarea(id) {
     textarea.style.width = '100%';
     textarea.style.height = '20px';
     textarea.style.marginTop = '5px';
-
-    // Add event listener to the new textarea
-    textarea.addEventListener("keypress", function(event) {
-        if (event.key === "Enter") {
-            event.preventDefault(); // Prevent default behavior of Enter key
-
-            // Retrieve the line code from the current line
-            let currentLineId = `line${num}`;
-            let linecode = textarea.value.trim(); // Get value from the current textarea
-
-            // Check if the linecode is empty
-            if (linecode === '') {
-                displayMessage("Please enter a line of code before adding a new line.");
-                return; // Exit if the textarea is empty
-            }
-
-            // Store the new line in the Map
-            lines.set(currentLineId, linecode);
-
-            // Create a new line ID for the next textarea
-            let newLineId = `line${num + 1}`;
-
-            // Append new textarea to body
-            let newTextarea = createTextarea(newLineId);
-            document.body.appendChild(newTextarea);
-            newTextarea.focus(); // Set focus on the new textarea
-
-            // Increment the line number
-            num++;
-
-            // Call p() to process the lines whenever a new line is added
-            p();
-        }
-    });
-
     return textarea;
 }
 
-// Event listener for the initial textarea
-ctl.addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault(); // Prevent default behavior of Enter key
-
-        // Retrieve the line code from the current line
-        let currentLineId = `line${num}`;
-        let linecode = ctl.value.trim(); // Get value from the input textarea
-
-        // Check if the linecode is empty
-        if (linecode === '') {
-            displayMessage("Please enter a line of code before adding a new line.");
-            return; // Exit if the textarea is empty
-        }
-
-        // Store the new line in the Map
-        lines.set(currentLineId, linecode);
-
-        // Create a new line ID for the next textarea
-        let newLineId = `line${num + 1}`;
-
-        // Append new textarea to body
-        let newTextarea = createTextarea(newLineId);
-        document.body.appendChild(newTextarea);
-        newTextarea.focus(); // Set focus on the new textarea
-
-        // Increment the line number
-        num++;
-
-        // Call p() to process the lines whenever a new line is added
-        p();
-    }
-});
-
-// Initialize the first line in the Map
-lines.set('line1', code);
-
 // Function to process stored lines
-function p() {
+function processLines() {
     // Clear previous output
     const outputDiv = document.getElementById('output');
     outputDiv.innerHTML = ''; // Clear previous output
@@ -149,6 +106,22 @@ function p() {
                             let outputText = '';
                             let print = function(text) {
                                 outputText += text + '\n';
+                            };
+                            let alert = function(text) {
+                                text = text.replace(/\/(\w+)/g, (match, p1) => varr.get(p1) || ''); // Replace variables with their values
+                                if (text) window.alert(text);
+                            };
+                            let link = function(url, linkText) {
+                                url = url.replace(/\/(\w+)/g, (match, p1) => varr.get(p1) || ''); // Replace variables with their values
+                                linkText = linkText.replace(/\/(\w+)/g, (match, p1) => varr.get(p1) || ''); // Replace variables with their values
+                                if (url && linkText) {
+                                    let a = document.createElement("a");
+                                    a.href = url;
+                                    a.textContent = linkText;
+                                    a.target = "_blank"; // Open link in new tab
+                                    outputDiv.appendChild(a);
+                                    outputDiv.appendChild(document.createElement("br")); // Add line break after the link
+                                }
                             };
                             let getVar = function(name) {
                                 return varr.get(name) || '';
