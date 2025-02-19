@@ -112,6 +112,18 @@ function p() {
                 p.textContent = text; // Set the text safely
                 outputDiv.appendChild(p); // Append to the output div
             }
+        } else if (linnee.startsWith("link")) {
+            let text = linnee.substring(5).trim(); // Extract link text and URL
+            text = text.replace(/\/(\w+)/g, (match, p1) => varr.get(p1) || ''); // Replace variables with their values
+            let [url, linkText] = text.split(' ').map(s => s.trim()); // Split URL and link text
+            if (url && linkText) {
+                let a = document.createElement("a");
+                a.href = url;
+                a.textContent = linkText;
+                a.target = "_blank"; // Open link in new tab
+                outputDiv.appendChild(a);
+                outputDiv.appendChild(document.createElement("br")); // Add line break after the link
+            }
         } else if (linnee.startsWith("var")) {
             let varAssignment = linnee.substring(4).trim(); // Extract variable assignment
             let [varName, varValue] = varAssignment.split('=').map(s => s.trim()); // Split by = to get name and value
