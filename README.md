@@ -42,6 +42,23 @@ var message = 'This is a text output.'
 text /message
 ```
 
+### Links
+
+To create a clickable link:
+
+```
+link URL LinkText
+```
+
+You can use variables for both the URL and the link text by prefixing them with `/`.
+
+Example:
+```
+var url = 'https://example.com'
+var linkText = 'Click here'
+link /url /linkText
+```
+
 ### Functions
 
 #### Defining Functions
