@@ -6,7 +6,7 @@ Welcome to the CTL Language Interface! This guide will help you understand how t
 
 1. Open the `index.html` file in your web browser.
 2. You will see a text area where you can enter your CTL code.
-3. As you write and execute CTL code, additional text areas will be created for subsequent lines of code.
+3. Click the "Run" button to process the code and see the results.
 
 ## Syntax and Commands
 
@@ -134,7 +134,7 @@ If there is an error in your code (e.g., trying to run an undefined function), a
 
 ## Additional Information
 
-- Make sure to enter a valid line of code before pressing Enter.
+- Make sure to enter a valid line of code before pressing the "Run" button.
 - The interface will automatically create new text areas as you add more lines of code.
 - You can define multiple functions and run them in any order.
 
