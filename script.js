@@ -195,18 +195,18 @@ function displayMessage(message) {
     }
 }
 ````markdown name=README.md
-# CTL Language Interface
+# Welcome to CTL Language Interface!
 
-Welcome to the CTL Language Interface! This guide will help you understand how to use the CTL language and the interactive coding interface.
+Hi there! 🌟 Welcome to the CTL Language Interface! This is a fun and easy guide to help you use the CTL language. Let's get started!
 
-## Getting Started
+## How to Begin
 
-1. Open the `index.html` file in your web browser.
-2. You will see a text area where you can enter your CTL code.
-3. As you write and execute CTL code, additional text areas will be created for subsequent lines of code.
+1. Open the `index.html` file in your web browser. 📄
+2. You'll see a big box where you can type your CTL code. 📝
+3. Every time you press Enter, new boxes will appear for more code. Cool, right? 😎
 
-## Syntax and Commands
+## Commands You Can Use
 
 ### Alerts
 
-To display an alert message:
+Want to show an alert message? Use this:
