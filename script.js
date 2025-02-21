@@ -1,5 +1,4 @@
 let ctl = document.getElementById("code");
-let code = ctl.value; // Store the initial value of the textarea
 let num = 1; // Line number counter
 const lines = new Map(); // Initialize an empty Map for lines
 const funct = new Map(); // Function storage Map
@@ -43,8 +42,8 @@ function createTextarea(id) {
             // Increment the line number
             num++;
 
-            // Call p() to process the lines whenever a new line is added
-            p();
+            // Call processLines() to process the lines whenever a new line is added
+            processLines();
         }
     });
 
@@ -80,16 +79,16 @@ ctl.addEventListener("keypress", function(event) {
         // Increment the line number
         num++;
 
-        // Call p() to process the lines whenever a new line is added
-        p();
+        // Call processLines() to process the lines whenever a new line is added
+        processLines();
     }
 });
 
 // Initialize the first line in the Map
-lines.set('line1', code);
+lines.set('line1', ctl.value.trim());
 
 // Function to process stored lines
-function p() {
+function processLines() {
     // Clear previous output
     const outputDiv = document.getElementById('output');
     outputDiv.innerHTML = ''; // Clear previous output
@@ -195,3 +194,19 @@ function displayMessage(message) {
         setTimeout(() => messageDiv.textContent = '', 3000); // Clear message after 3 seconds
     }
 }
+````markdown name=README.md
+# CTL Language Interface
+
+Welcome to the CTL Language Interface! This guide will help you understand how to use the CTL language and the interactive coding interface.
+
+## Getting Started
+
+1. Open the `index.html` file in your web browser.
+2. You will see a text area where you can enter your CTL code.
+3. As you write and execute CTL code, additional text areas will be created for subsequent lines of code.
+
+## Syntax and Commands
+
+### Alerts
+
+To display an alert message:
