@@ -1,4 +1,3 @@
-````markdown name=README.md
 # Welcome to CTL Language Interface!
 
 Hi there! 🌟 Welcome to the CTL Language Interface! This is a fun and easy guide to help you use the CTL language. Let's get started!
@@ -144,4 +143,3 @@ If your code has a mistake (like trying to run a function that doesn't exist), a
 We hope you have fun with the CTL Language Interface. If you have any questions or need help, just ask!
 
 Happy coding! 😊
-````
