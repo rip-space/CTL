@@ -1,24 +1,25 @@
-# CTL Language Interface
+````markdown name=README.md
+# Welcome to CTL Language Interface!
 
-Welcome to the CTL Language Interface! This guide will help you understand how to use the CTL language and the interactive coding interface.
+Hi there! 🌟 Welcome to the CTL Language Interface! This is a fun and easy guide to help you use the CTL language. Let's get started!
 
-## Getting Started
+## How to Begin
 
-1. Open the `index.html` file in your web browser.
-2. You will see a text area where you can enter your CTL code.
-3. Click the "Run" button to process the code and see the results.
+1. Open the `index.html` file in your web browser. 📄
+2. You'll see a big box where you can type your CTL code. 📝
+3. Every time you press Enter, new boxes will appear for more code. Cool, right? 😎
 
-## Syntax and Commands
+## Commands You Can Use
 
 ### Alerts
 
-To display an alert message:
+Want to show an alert message? Use this:
 
 ```
 alert Your message here
 ```
 
-You can use variables in the alert message by prefixing them with `/`.
+You can even use variables in the alert message by adding a `/` before them.
 
 Example:
 ```
@@ -28,13 +29,13 @@ alert /greeting
 
 ### Text Outputs
 
-To display text on the page:
+To show text on the screen, type this:
 
 ```
 text Your text here
 ```
 
-You can use variables in the text output by prefixing them with `/`.
+You can also use variables in the text by adding a `/` before them.
 
 Example:
 ```
@@ -44,13 +45,13 @@ text /message
 
 ### Links
 
-To create a clickable link:
+Make clickable links with this command:
 
 ```
 link URL LinkText
 ```
 
-You can use variables for both the URL and the link text by prefixing them with `/`.
+You can use variables for both the URL and the link text by adding a `/` before them.
 
 Example:
 ```
@@ -61,16 +62,16 @@ link /url /linkText
 
 ### Functions
 
-#### Defining Functions
+#### Making Functions
 
-To define a function, use the following syntax:
+To create a function, use this:
 
 ```
 function functionName() Function body
 ```
 
-- `functionName` is the name of the function.
-- `Function body` is the code that will be executed when the function is called. You can use the `print` function within the function body to output text.
+- `functionName` is the name of your function.
+- `Function body` is what the function does. You can use the `print` function inside to show text.
 
 Example:
 ```
@@ -79,7 +80,7 @@ function myFunc() print('Hello from myFunc')
 
 #### Running Functions
 
-To run a defined function, use the following syntax:
+To run a function you made, type this:
 
 ```
 run functionName()
@@ -92,16 +93,16 @@ run myFunc()
 
 ### Variables
 
-#### Declaring Variables
+#### Making Variables
 
-To declare a variable, use the following syntax:
+To make a variable, use this:
 
 ```
 var variableName = value
 ```
 
-- `variableName` is the name of the variable.
-- `value` is the value assigned to the variable.
+- `variableName` is what you call your variable.
+- `value` is what you give to the variable.
 
 Example:
 ```
@@ -110,7 +111,7 @@ var greeting = 'Hello, World!'
 
 #### Using Variables
 
-You can use variables within function bodies and other parts of your code.
+You can use variables inside functions and other parts of your code.
 
 Example:
 ```
@@ -120,7 +121,7 @@ run showGreeting()
 
 ### Full Example
 
-Here is a complete example that defines a variable, a function, and runs it:
+Here's an example that makes a variable, a function, and runs it:
 
 ```
 var greeting = 'Hello, welcome to CTL!'
@@ -128,18 +129,19 @@ function greet() print(getVar('greeting'))
 run greet()
 ```
 
-## Error Handling
+## If Something Goes Wrong
 
-If there is an error in your code (e.g., trying to run an undefined function), a message will be displayed at the bottom of the page.
+If your code has a mistake (like trying to run a function that doesn't exist), a message will show up at the bottom of the page.
 
-## Additional Information
+## Extra Info
 
-- Make sure to enter a valid line of code before pressing the "Run" button.
-- The interface will automatically create new text areas as you add more lines of code.
-- You can define multiple functions and run them in any order.
+- Make sure to type a valid line of code before pressing Enter.
+- New boxes will appear as you add more lines of code.
+- You can make lots of functions and run them in any order you like.
 
-## Conclusion
+## The End
 
-We hope this guide helps you get started with the CTL Language Interface. If you have any questions or need further assistance, feel free to reach out.
+We hope you have fun with the CTL Language Interface. If you have any questions or need help, just ask!
 
-Happy coding!
+Happy coding! 😊
+````
