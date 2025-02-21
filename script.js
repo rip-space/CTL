@@ -194,19 +194,3 @@ function displayMessage(message) {
         setTimeout(() => messageDiv.textContent = '', 3000); // Clear message after 3 seconds
     }
 }
-````markdown name=README.md
-# Welcome to CTL Language Interface!
-
-Hi there! 🌟 Welcome to the CTL Language Interface! This is a fun and easy guide to help you use the CTL language. Let's get started!
-
-## How to Begin
-
-1. Open the `index.html` file in your web browser. 📄
-2. You'll see a big box where you can type your CTL code. 📝
-3. Every time you press Enter, new boxes will appear for more code. Cool, right? 😎
-
-## Commands You Can Use
-
-### Alerts
-
-Want to show an alert message? Use this:
