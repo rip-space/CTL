@@ -1,23 +1,26 @@
 # Welcome to CTL Language Interface!
 
-Hi there! 🌟 Welcome to the CTL Language Interface! This is a fun and easy guide to help you use the CTL language. Let's get started!
+Welcome to the CTL Language Interface! This is a dreadful I mean easy tutorial to help you use the CTL. here you go little goobers
 
-## How to Begin
+## Set up
+1. Download the zip file of this, or you can download each one separately.
+2. Open the 'index.html' file. 
+3. You'll see a big🤨 box where you can type your CTL code. 
+4. Every time you press Enter, there is a new line magic right🤯 'pls don't burn me im not a wizard'.
 
-1. Open the `index.html` file in your web browser. 📄
-2. You'll see a big box where you can type your CTL code. 📝
-3. Every time you press Enter, new boxes will appear for more code. Cool, right? 😎
-
-## Commands You Can Use
+## Commands
 
 ### Alerts
 
-Want to show an alert message? Use this:
+Want to show an alert message? 
 
 ```
 alert Your message here
 ```
-
+hmmm
+```
+alert im in your walls🗿
+```
 You can even use variables in the alert message by adding a `/` before them.
 
 Example:
@@ -28,7 +31,7 @@ alert /greeting
 
 ### Text Outputs
 
-To show text on the screen, type this:
+To show text on the screen.
 
 ```
 text Your text here
@@ -140,6 +143,4 @@ If your code has a mistake (like trying to run a function that doesn't exist), a
 
 ## The End
 
-We hope you have fun with the CTL Language Interface. If you have any questions or need help, just ask!
-
-Happy coding! 😊
+We 'soon just me :(' hope you have fun with the CTL Language Interface. If you have any questions or need help, just ask!
